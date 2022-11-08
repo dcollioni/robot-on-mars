@@ -1,0 +1,23 @@
+{
+  "name": "robot-on-mars",
+  "version": "1.0.0",
+  "description": "Robot on Mars",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dcollioni/robot-on-mars.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dcollioni/robot-on-mars/issues"
+  },
+  "homepage": "https://github.com/dcollioni/robot-on-mars#readme",
+  "devDependencies": {
+    "@types/jest": "^29.2.2",
+    "jest": "^29.3.0"
+  }
+}
