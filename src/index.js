@@ -12,7 +12,7 @@ const readInputs = () => {
     {
       type: 'text',
       name: 'input',
-      message: 'Please enter your input command (e.g. FFRFLFRF)'
+      message: 'Please enter the command input (e.g. FFRFLFRF)'
     }
   ]
 

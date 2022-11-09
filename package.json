@@ -2,7 +2,7 @@
   "name": "robot-on-mars",
   "version": "1.0.0",
   "description": "Robot on Mars",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "jest",
     "start": "node ./src/index.js"
