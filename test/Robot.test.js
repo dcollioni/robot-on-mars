@@ -1,4 +1,5 @@
 const Robot = require('./../src/Robot')
+const Plateau = require('./../src/Plateau')
 const directions = require('./../src/directions')
 
 describe('Robot', () => {
@@ -124,6 +125,180 @@ describe('Robot', () => {
       
                 it('should have its direction changed to north', () => {
                   expect(robot.direction).toStrictEqual(directions.north)
+                })
+              })
+            })
+          })
+        })
+      })
+    })
+
+    describe('.moveForward', () => {
+      it('should be defined', () => {
+        expect(robot.moveForward).toBeDefined()
+      })
+
+      describe('given a plateau of 3x3', () => {
+        const plateau = new Plateau(3, 3)
+
+        describe('given the robot direction is north and position is 1,1', () => {
+          beforeAll(() => {
+            robot.direction = directions.north
+            robot.posX = 1
+            robot.posY = 1
+          })
+
+          describe('given the robot moves forward', () => {
+            beforeAll(() => {
+              robot.moveForward(plateau)
+            })
+
+            it('robot posY should change to 2', () => {
+              expect(robot.posX).toStrictEqual(1)
+              expect(robot.posY).toStrictEqual(2)
+            })
+
+            describe('given the robot moves forward', () => {
+              beforeAll(() => {
+                robot.moveForward(plateau)
+              })
+
+              it('robot posY should change to 3', () => {
+                expect(robot.posX).toStrictEqual(1)
+                expect(robot.posY).toStrictEqual(3)
+              })
+
+              describe('given the robot moves forward', () => {
+                beforeAll(() => {
+                  robot.moveForward(plateau)
+                })
+  
+                it('robot posY should remain 3', () => {
+                  expect(robot.posX).toStrictEqual(1)
+                  expect(robot.posY).toStrictEqual(3)
+                })
+              })
+            })
+          })
+        })
+
+        describe('given the robot direction is east and position is 1,1', () => {
+          beforeAll(() => {
+            robot.direction = directions.east
+            robot.posX = 1
+            robot.posY = 1
+          })
+
+          describe('given the robot moves forward', () => {
+            beforeAll(() => {
+              robot.moveForward(plateau)
+            })
+
+            it('robot posX should change to 2', () => {
+              expect(robot.posY).toStrictEqual(1)
+              expect(robot.posX).toStrictEqual(2)
+            })
+
+            describe('given the robot moves forward', () => {
+              beforeAll(() => {
+                robot.moveForward(plateau)
+              })
+
+              it('robot posX should change to 3', () => {
+                expect(robot.posY).toStrictEqual(1)
+                expect(robot.posX).toStrictEqual(3)
+              })
+
+              describe('given the robot moves forward', () => {
+                beforeAll(() => {
+                  robot.moveForward(plateau)
+                })
+  
+                it('robot posX should remain 3', () => {
+                  expect(robot.posY).toStrictEqual(1)
+                  expect(robot.posX).toStrictEqual(3)
+                })
+              })
+            })
+          })
+        })
+
+        describe('given the robot direction is south and position is 1,3', () => {
+          beforeAll(() => {
+            robot.direction = directions.south
+            robot.posX = 1
+            robot.posY = 3
+          })
+
+          describe('given the robot moves forward', () => {
+            beforeAll(() => {
+              robot.moveForward(plateau)
+            })
+
+            it('robot posY should change to 2', () => {
+              expect(robot.posX).toStrictEqual(1)
+              expect(robot.posY).toStrictEqual(2)
+            })
+
+            describe('given the robot moves forward', () => {
+              beforeAll(() => {
+                robot.moveForward(plateau)
+              })
+
+              it('robot posY should change to 1', () => {
+                expect(robot.posX).toStrictEqual(1)
+                expect(robot.posY).toStrictEqual(1)
+              })
+
+              describe('given the robot moves forward', () => {
+                beforeAll(() => {
+                  robot.moveForward(plateau)
+                })
+  
+                it('robot posY should remain 1', () => {
+                  expect(robot.posX).toStrictEqual(1)
+                  expect(robot.posY).toStrictEqual(1)
+                })
+              })
+            })
+          })
+        })
+
+        describe('given the robot direction is west and position is 3,1', () => {
+          beforeAll(() => {
+            robot.direction = directions.west
+            robot.posX = 3
+            robot.posY = 1
+          })
+
+          describe('given the robot moves forward', () => {
+            beforeAll(() => {
+              robot.moveForward(plateau)
+            })
+
+            it('robot posX should change to 2', () => {
+              expect(robot.posY).toStrictEqual(1)
+              expect(robot.posX).toStrictEqual(2)
+            })
+
+            describe('given the robot moves forward', () => {
+              beforeAll(() => {
+                robot.moveForward(plateau)
+              })
+
+              it('robot posX should change to 1', () => {
+                expect(robot.posY).toStrictEqual(1)
+                expect(robot.posX).toStrictEqual(1)
+              })
+
+              describe('given the robot moves forward', () => {
+                beforeAll(() => {
+                  robot.moveForward(plateau)
+                })
+  
+                it('robot posX should remain 1', () => {
+                  expect(robot.posY).toStrictEqual(1)
+                  expect(robot.posX).toStrictEqual(1)
                 })
               })
             })
